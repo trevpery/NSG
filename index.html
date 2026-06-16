@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>N. S. Gokhale & Co. | Website Design Review</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#1d8ec6;
+  --deep:#15315a;
+  --gold:#d8b25a;
+  --gold-dark:#9c6f1f;
+  --paper:#f7f5f0;
+  --muted:rgba(21,49,90,.66);
+  --line:rgba(21,49,90,.13);
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Montserrat', system-ui, sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:var(--sans);
+  background:
+    radial-gradient(circle at 14% 12%, rgba(216,178,90,.16), transparent 26%),
+    radial-gradient(circle at 86% 18%, rgba(29,142,198,.12), transparent 30%),
+    linear-gradient(135deg,#fbfaf7 0%,#f3f6f8 48%,#f7f5f0 100%);
+  color:var(--deep);
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit}
+
+.portal{min-height:100vh;padding:clamp(22px,3vw,42px)}
+.shell{max-width:1180px;margin:0 auto}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  margin-bottom:clamp(46px,7vw,86px);
+}
+
+.logo-card{display:flex;align-items:center;gap:18px}
+
+.logo-mark{
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(216,178,90,.45);
+  background:rgba(255,255,255,.58);
+  box-shadow:0 22px 50px -36px rgba(21,49,90,.55);
+  font-family:var(--serif);
+  font-size:27px;
+  font-weight:700;
+  color:var(--deep);
+}
+
+.brand small{
+  display:block;
+  font-size:11px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  font-weight:700;
+  margin-bottom:5px;
+}
+
+.brand strong{
+  font-family:var(--serif);
+  font-size:clamp(24px,2.7vw,36px);
+  line-height:1;
+  font-weight:600;
+}
+
+.brand-logo img{
+  width:min(280px,78vw);
+  height:auto;
+  display:block;
+}
+
+.status{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.54);
+  padding:12px 15px;
+}
+
+.status i{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 0 6px rgba(216,178,90,.16);
+}
+
+.hero{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
+  gap:clamp(30px,6vw,84px);
+  align-items:end;
+  padding-bottom:clamp(42px,6vw,76px);
+  border-bottom:1px solid var(--line);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  right:4%;
+  top:-20px;
+  width:clamp(220px,28vw,420px);
+  aspect-ratio:1;
+  border-radius:50%;
+  border:1px solid rgba(216,178,90,.22);
+  box-shadow:inset 0 0 0 54px rgba(255,255,255,.22);
+  pointer-events:none;
+  z-index:-1;
+}
+
+.kicker{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+h1{
+  font-family:var(--serif);
+  font-size:clamp(48px,7.5vw,104px);
+  line-height:.9;
+  font-weight:600;
+  letter-spacing:-.025em;
+  max-width:9ch;
+}
+
+.hero-copy{
+  color:var(--muted);
+  line-height:1.8;
+  font-size:clamp(15px,1.35vw,18px);
+  max-width:38ch;
+}
+
+.review-note{
+  margin-top:22px;
+  padding:18px 20px;
+  border-left:3px solid var(--gold);
+  background:rgba(255,255,255,.55);
+  color:rgba(21,49,90,.74);
+  line-height:1.65;
+  font-size:14px;
+}
+
+.section{padding:clamp(46px,6.5vw,82px) 0 0}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:24px;
+  margin-bottom:24px;
+}
+
+.section-label{
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.section h2{
+  font-size:clamp(28px,3.3vw,44px);
+  font-family:var(--serif);
+  font-weight:600;
+  line-height:1;
+}
+
+.section-desc{
+  color:var(--muted);
+  line-height:1.7;
+  max-width:42ch;
+  font-size:14px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+
+.grid.single{grid-template-columns:minmax(0,1fr)}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(21,49,90,.12);
+  min-height:260px;
+  padding:28px;
+  box-shadow:0 24px 70px -54px rgba(21,49,90,.65);
+  transition:transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 34px 84px -56px rgba(21,49,90,.75);
+  border-color:rgba(216,178,90,.44);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold));
+}
+
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:flex-start;
+  margin-bottom:34px;
+}
+
+.tag{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  font-weight:700;
+}
+
+.num{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:38px;
+  line-height:1;
+  color:rgba(21,49,90,.25);
+}
+
+.card h3{
+  font-size:clamp(24px,2.4vw,34px);
+  line-height:1.05;
+  font-family:var(--serif);
+  font-weight:600;
+  margin-bottom:14px;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14.5px;
+  max-width:42ch;
+  margin-bottom:28px;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  background:var(--deep);
+  color:#fff;
+  padding:13px 18px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:700;
+  transition:background .25s var(--ease), transform .25s var(--ease);
+}
+
+.btn:hover{
+  background:var(--blue);
+  transform:translateX(2px);
+}
+
+.btn.gold{
+  background:linear-gradient(100deg,var(--gold-dark),var(--gold));
+  color:#111;
+}
+
+.file-name{
+  font-size:12px;
+  color:rgba(21,49,90,.48);
+  word-break:break-word;
+}
+
+.notes{
+  margin-top:clamp(48px,7vw,88px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.note-box{
+  background:rgba(21,49,90,.96);
+  color:#fff;
+  padding:32px;
+  position:relative;
+  overflow:hidden;
+}
+
+.note-box.light{
+  background:rgba(255,255,255,.72);
+  color:var(--deep);
+  border:1px solid var(--line);
+}
+
+.note-box h3{
+  font-family:var(--serif);
+  font-size:30px;
+  font-weight:600;
+  margin-bottom:16px;
+}
+
+.note-box ul{
+  list-style:none;
+  display:grid;
+  gap:12px;
+  color:rgba(255,255,255,.78);
+  font-size:14px;
+  line-height:1.55;
+}
+
+.note-box.light ul{color:var(--muted)}
+
+.note-box li::before{
+  content:"";
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+  margin-right:10px;
+  vertical-align:middle;
+}
+
+.footer{
+  padding:42px 0 10px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:18px;
+  color:rgba(21,49,90,.55);
+  font-size:12px;
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .grid,.notes{grid-template-columns:1fr}
+  .top{align-items:flex-start;flex-direction:column}
+}
+
+@media(max-width:560px){
+  .portal{padding:18px}
+  .card{padding:24px}
+  .section-head{display:block}
+}
+
+/* Minimal hero after removing review copy */
+.minimal-hero{
+  grid-template-columns:1fr!important;
+  align-items:start!important;
+  padding-bottom:clamp(34px,5vw,60px)!important;
+}
+.minimal-hero h1{
+  max-width:none!important;
+}
+
+</style>
+</head>
+
+<body>
+<main class="portal">
+  <div class="shell">
+
+    <header class="top">
+      <div class="logo-card">
+        <div class="brand-logo">
+          <img src="https://nsgokhale.online/cdn/assets/logo/ns-gokhle-co-chartered-accountants.svg" alt="N. S. Gokhale & Co.">
+        </div>
+      </div>
+      <div class="status"><i></i> Design Concepts</div>
+    </header>
+
+    
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Home Page</div>
+          <h2>Homepage design directions</h2>
+        </div>
+        <p class="section-desc">Two homepage concepts for review. Please compare the hero treatment, section flow, and overall brand feel.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-top">
+            <span class="tag">Home Concept</span>
+            <span class="num">01</span>
+          </div>
+          <h3>Option 1</h3>
+          <p>Homepage concept with the first visual direction and complete homepage section flow.</p>
+          <div class="actions">
+            <a class="btn" href="Option 1.html">Open Option 1 →</a>
+            <span class="file-name">Option 1.html</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <span class="tag">Home Concept</span>
+            <span class="num">02</span>
+          </div>
+          <h3>Option 2</h3>
+          <p>Alternative homepage direction with revised visual treatment and interaction refinements.</p>
+          <div class="actions">
+            <a class="btn" href="Option 2.html">Open Option 2 →</a>
+            <span class="file-name">Option 2(2).html</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Leadership Team</div>
+          <h2>Partner profile experiences</h2>
+        </div>
+        <p class="section-desc">Two different ways to present the leadership team: card-flip interaction and focused profile panel.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-top">
+            <span class="tag">Leadership</span>
+            <span class="num">01</span>
+          </div>
+          <h3>Option 1</h3>
+          <p>Interactive partner cards with profile details available through a card reveal experience.</p>
+          <div class="actions">
+            <a class="btn" href="leadership-team-final - Option 1.html">Open Option 1 →</a>
+            <span class="file-name">leadership-team-final - Option 1.html</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <span class="tag">Leadership</span>
+            <span class="num">02</span>
+          </div>
+          <h3>Option 2</h3>
+          <p>Focused profile-panel experience where the selected partner profile opens in a dedicated reading area.</p>
+          <div class="actions">
+            <a class="btn" href="leadership-team2-clean-focus - Option 2.html">Open Option 2 →</a>
+            <span class="file-name">leadership-team2-clean-focus - Option 2.html</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Specialised Solutions</div>
+          <h2>Just For You page</h2>
+        </div>
+        <p class="section-desc">A dedicated page for audience-specific services and solution pathways.</p>
+      </div>
+
+      <div class="grid single">
+        <article class="card">
+          <div class="card-top">
+            <span class="tag">Segment Page</span>
+            <span class="num">03</span>
+          </div>
+          <h3>Just For You</h3>
+          <p>Review the structure and clarity of the audience-specific service page.</p>
+          <div class="actions">
+            <a class="btn gold" href="just-for-you.html">Open Page →</a>
+            <span class="file-name">just-for-you.html</span>
+          </div>
+        </article>
+      </div>
+    </section>
+<footer class="footer">
+      <span>N. S. Gokhale &amp; Co. — Website Design Review</span>
+      <span>Prepared for client review</span>
+    </footer>
+
+  </div>
+</main>
+</body>
+</html>
