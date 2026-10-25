@@ -711,7 +711,22 @@
   .topbar .sub li a { font-size: 11.5px !important; }
 }
 </style>
-</head>
+<style id="nsg-mobile-menu-fix">
+/* Consistent accessible mobile navigation on every page */
+@media(max-width:940px){
+ .topbar .nav .menu{position:absolute!important;top:var(--nav-h,84px)!important;left:12px!important;right:12px!important;width:auto!important;max-height:calc(100dvh - var(--nav-h,84px) - 14px)!important;overflow-y:auto!important;background:#fff!important;border:1px solid #dce4e8!important;z-index:1000!important;flex-direction:column!important;align-items:stretch!important;padding:10px 0!important;box-shadow:0 18px 40px rgba(0,0,0,.18)!important}
+ .topbar .nav:not(.open) .menu{display:none!important}
+ .topbar .nav.open .menu{display:flex!important}
+ .topbar .nav .menu>li{width:100%!important;padding:0!important}
+ .topbar .nav .menu>li>a{color:#15315a!important;display:flex!important;align-items:center!important;justify-content:space-between!important;font-size:14px!important;font-weight:500!important;white-space:normal!important;padding:13px 20px!important;text-shadow:none!important}
+ .topbar .nav .menu>li>a .caret{color:#15315a!important;opacity:1!important}
+ .topbar .nav .menu>li>.sub{display:none!important;position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;background:#f4f7fa!important;border:0!important;box-shadow:none!important;min-width:0!important;padding:4px 0 8px!important}
+ .topbar .nav .menu>li.mobile-expanded>.sub{display:block!important}
+ .topbar .nav .sub li a{display:block!important;color:#15315a!important;font-size:13px!important;padding:11px 26px 11px 35px!important;white-space:normal!important}
+ .topbar .nav .sub li a:hover{background:#e5eef6!important}
+ .topbar .nav .menu-toggle{position:relative;z-index:1001;cursor:pointer}
+}
+</style></head>
 <body>
 <!-- ░░ NAV ░░ -->
 <header class="topbar" id="topbar">
@@ -728,7 +743,7 @@
 <ul class="sub"><li><a href="audit-assurance.html">Audit &amp; Assurance</a></li><li><a href="accounting.html">Accounting</a></li><li><a href="taxation.html">Taxation</a></li><li><a href="capital-market.html">Capital Market</a></li><li><a href="business-advisory-support.html">Business Advisory Support</a></li></ul></li>
 <li class="has"><a href="#">Our Experience <i class="caret"></i></a><ul class="sub"><li><a href="our-clientele.html">Our Clientele</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></li>
 <li class="has"><a href="index.html#just-for-you">Just For You <i class="caret"></i></a>
-<ul class="sub"><li><a href="just-for-you.html#bfsi">BFSI Entity — Bank, NBFC, MF, Insurance</a></li><li><a href="just-for-you.html#manufacturing">Manufacturing, Trading &amp; Other Services</a></li><li><a href="just-for-you.html#startup">Start-Up / Early Stage &amp; MSME</a></li><li><a href="just-for-you.html#individuals">Individuals</a></li></ul></li>
+<ul class="sub"><li><a href="index.html#just-for-you">Banking &amp; Financial Services</a></li><li><a href="index.html#just-for-you">Manufacturing, Trading, Other Services</a></li><li><a href="just-for-you-startup-msme.html">Start-up / Early-stage / MSME</a></li><li><a href="index.html#just-for-you">Family Office / HNI / NRI</a></li><li><a href="index.html#just-for-you">Foreign Entity</a></li><li><a href="index.html#just-for-you">Not-for-profit</a></li></ul></li>
 <li class="has"><a href="#">Knowledge Centre <i class="caret"></i></a>
 <ul class="sub"><li><a href="#">E-Library</a></li><li><a href="#">Links to Regulators</a></li><li><a href="#">Latest News Updates</a></li><li><a href="#">Calculators</a></li><li><a href="#">Referencers</a></li><li><a href="#">Own Contributions</a></li></ul></li>
 <li class="has"><a href="#">Life@Nsg <i class="caret"></i></a>
@@ -835,13 +850,13 @@
 <div class="stat"><div class="snum">65+</div><div class="slabel">Service Locations</div></div>
 </div>
 <div class="sa-inner">
-<div class="sa-pill-wrap"><span class="sa-pill">Just For You</span><h2 class="sa-title">Specialised solutions for every entity</h2></div>
+<div class="sa-pill-wrap"><span class="sa-pill">Just For You</span><h2 class="sa-title">Services specifically tailored for you</h2></div>
 <div class="sa-grid">
 <div class="sa-list" id="saList"><!-- rows injected by JS --></div>
 <div class="sa-detail">
 <div class="sa-text">
 <h3 id="saTitle"></h3>
-<p id="saDesc"></p>
+<p id="saDesc"></p><a id="saExplore" href="just-for-you-startup-msme.html" style="display:none;margin-top:18px;font-weight:700;text-decoration:underline;text-underline-offset:5px">Explore services →</a>
 <svg aria-hidden="true" class="sa-arrow" height="20" viewbox="0 0 40 16" width="48"><path d="M0 8h34M28 2l8 6-8 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
 </div>
 <!-- DEV: swap to a per-entity image -->
@@ -1161,10 +1176,12 @@ document.querySelectorAll('[data-card]').forEach(c=>io.observe(c));
 
 /* SERVICE AREA — click a row on the left, it opens on the right */
 const SERVICES=[
-  {name:'BFSI Entity', desc:'Comprehensive audit, regulatory and advisory support for banks, NBFCs, mutual funds and insurance entities.', img:asset(IMAGE_FILES.serviceBfsi)},
-  {name:'Manufacturing, Trading & Other Services', desc:'End-to-end assurance, tax and compliance solutions tailored to production, distribution and service businesses.', img:IMG_WOMEN},
-  {name:'Start-up / Early Stage & MSME', desc:'Founder-friendly structuring, compliance and growth advisory for new ventures, early-stage businesses and MSMEs.', img:asset(IMAGE_FILES.serviceStartup)},
-  {name:'Individuals', desc:'Personalised tax planning, wealth structuring and advisory for individuals — including HNIs, NRIs and family offices.', img:IMG_LAPTOP},
+  {name:'Banking & Financial Services',desc:'Services specifically tailored for banking and financial services organisations.',img:asset(IMAGE_FILES.serviceBfsi)},
+  {name:'Manufacturing, Trading, Other Services',desc:'Services specifically tailored for manufacturing, trading and other service businesses.',img:IMG_WOMEN},
+  {name:'Start-up / Early-stage / MSME',desc:'Explore our specifically tailored and ancillary services for start-ups, early-stage businesses and MSMEs.',img:asset(IMAGE_FILES.serviceStartup),href:'just-for-you-startup-msme.html'},
+  {name:'Family Office / HNI / NRI',desc:'Services specifically tailored for family offices, high-net-worth individuals and non-resident Indians.',img:IMG_LAPTOP},
+  {name:'Foreign Entity',desc:'Services specifically tailored for foreign entities.',img:asset(IMAGE_FILES.serviceBfsi)},
+  {name:'Not-for-profit',desc:'Services specifically tailored for not-for-profit organisations.',img:IMG_WOMEN}
 ];
 const saList=document.getElementById('saList');
 function selectService(i){
@@ -1172,6 +1189,7 @@ function selectService(i){
   document.getElementById('saTitle').textContent=SERVICES[i].name;
   document.getElementById('saDesc').textContent=SERVICES[i].desc;
   if(SERVICES[i].img) document.getElementById('saImg').src=SERVICES[i].img;
+  const explore=document.getElementById('saExplore'); if(explore){explore.style.display=SERVICES[i].href?'inline-block':'none';if(SERVICES[i].href)explore.href=SERVICES[i].href;}
 }
 if(saList){
   SERVICES.forEach((s,i)=>{
@@ -1205,5 +1223,29 @@ document.querySelectorAll('.kc-item').forEach(it=>{
 
 go(0);
 </script>
-</body>
+<script id="nsg-mobile-menu-interaction">
+/* Mobile submenu toggle: first tap expands, next tap follows the parent link if valid. */
+(function(){
+ const nav=document.getElementById('nav'),toggle=document.getElementById('menuToggle');
+ if(!nav||!toggle)return;
+ toggle.setAttribute('aria-expanded','false');
+ toggle.addEventListener('click',()=>{requestAnimationFrame(()=>toggle.setAttribute('aria-expanded',String(nav.classList.contains('open'))));});
+ nav.querySelectorAll('.menu > li').forEach(li=>{
+  const sub=li.querySelector(':scope > .sub'),a=li.querySelector(':scope > a');
+  if(!sub||!a)return;
+  a.setAttribute('aria-expanded','false');
+  a.addEventListener('click',e=>{
+   if(window.innerWidth>940)return;
+   const expanded=li.classList.contains('mobile-expanded');
+   if(!expanded || a.getAttribute('href')==='#' || !a.getAttribute('href')){
+    e.preventDefault();
+    nav.querySelectorAll('.menu > li.mobile-expanded').forEach(other=>{if(other!==li){other.classList.remove('mobile-expanded');const oa=other.querySelector(':scope > a');if(oa)oa.setAttribute('aria-expanded','false');}});
+    li.classList.toggle('mobile-expanded');a.setAttribute('aria-expanded',String(li.classList.contains('mobile-expanded')));
+   }
+  });
+ });
+ nav.querySelectorAll('.sub a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
+ window.addEventListener('resize',()=>{if(window.innerWidth>940){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}});
+})();
+</script></body>
 </html>

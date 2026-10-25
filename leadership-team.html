@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Leadership Team | N S Gokhale & Co</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leadership Team | N S Gokhale &amp; Co</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{
     --white:#fff;
@@ -141,65 +142,75 @@
   .topbar .sub li a { font-size: 11.5px !important; }
 }
 </style>
-</head>
+<style id="nsg-mobile-menu-fix">
+/* Consistent accessible mobile navigation on every page */
+@media(max-width:940px){
+ .topbar .nav .menu{position:absolute!important;top:var(--nav-h,84px)!important;left:12px!important;right:12px!important;width:auto!important;max-height:calc(100dvh - var(--nav-h,84px) - 14px)!important;overflow-y:auto!important;background:#fff!important;border:1px solid #dce4e8!important;z-index:1000!important;flex-direction:column!important;align-items:stretch!important;padding:10px 0!important;box-shadow:0 18px 40px rgba(0,0,0,.18)!important}
+ .topbar .nav:not(.open) .menu{display:none!important}
+ .topbar .nav.open .menu{display:flex!important}
+ .topbar .nav .menu>li{width:100%!important;padding:0!important}
+ .topbar .nav .menu>li>a{color:#15315a!important;display:flex!important;align-items:center!important;justify-content:space-between!important;font-size:14px!important;font-weight:500!important;white-space:normal!important;padding:13px 20px!important;text-shadow:none!important}
+ .topbar .nav .menu>li>a .caret{color:#15315a!important;opacity:1!important}
+ .topbar .nav .menu>li>.sub{display:none!important;position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;background:#f4f7fa!important;border:0!important;box-shadow:none!important;min-width:0!important;padding:4px 0 8px!important}
+ .topbar .nav .menu>li.mobile-expanded>.sub{display:block!important}
+ .topbar .nav .sub li a{display:block!important;color:#15315a!important;font-size:13px!important;padding:11px 26px 11px 35px!important;white-space:normal!important}
+ .topbar .nav .sub li a:hover{background:#e5eef6!important}
+ .topbar .nav .menu-toggle{position:relative;z-index:1001;cursor:pointer}
+}
+</style></head>
 <body>
 <header class="topbar" id="topbar">
-  <a href="index.html" aria-label="Home">
-    <img class="logo" src="assets/NSG Master Logo for presentations.png" alt="N S Gokhale & Co — Chartered Accountants">
-  </a>
-  <nav class="nav" id="nav">
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span></button>
-    <ul class="menu">
-      <li><a href="index.html">Home</a></li>
-      <li class="has active"><a href="about-us.html">About Us <i class="caret"></i></a>
-        <ul class="sub"><li><a href="about-us.html#history">History &amp; Overview</a></li><li><a href="leadership-team.html">Leadership Team</a></li></ul></li>
-      <li class="has"><a href="audit-assurance.html">Services &amp; Solutions <i class="caret"></i></a><ul class="sub"><li><a href="audit-assurance.html">Audit &amp; Assurance</a></li><li><a href="accounting.html">Accounting</a></li><li><a href="taxation.html">Taxation</a></li><li><a href="capital-market.html">Capital Market</a></li><li><a href="business-advisory-support.html">Business Advisory Support</a></li></ul></li>
-      <li class="has"><a href="our-clientele.html">Our Experience <i class="caret"></i></a><ul class="sub"><li><a href="our-clientele.html">Our Clientele</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></li>
-      <li class="has"><a href="just-for-you.html">Just For You <i class="caret"></i></a>
-        <ul class="sub"><li><a href="just-for-you.html#bfsi">BFSI Entity</a></li><li><a href="just-for-you.html#manufacturing">Manufacturing, Trading &amp; Other Services</a></li><li><a href="just-for-you.html#startup">Start-up / Early Stage &amp; MSME</a></li><li><a href="just-for-you.html#individuals">Individuals</a></li></ul></li>
-      <li class="has"><a href="#">Knowledge Centre <i class="caret"></i></a>
-        <ul class="sub"><li><a href="#">E-Library</a></li><li><a href="#">Links to Regulators</a></li><li><a href="#">Latest News Updates</a></li><li><a href="#">Calculators</a></li><li><a href="#">Referencers</a></li><li><a href="#">Own Contributions</a></li></ul></li>
-      <li><a href="index.html#contact">Contact Us</a></li>
-    </ul>
-    <a class="li" href="#" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-    </a>
-  </nav>
+<a aria-label="Home" href="index.html">
+<img alt="N S Gokhale &amp; Co — Chartered Accountants" class="logo" src="assets/NSG Master Logo for presentations.png"/>
+</a>
+<nav class="nav" id="nav">
+<button aria-label="Menu" class="menu-toggle" id="menuToggle"><span></span></button>
+<ul class="menu">
+<li><a href="index.html">Home</a></li>
+<li class="has active"><a href="about-us.html">About Us <i class="caret"></i></a>
+<ul class="sub"><li><a href="about-us.html#history">History &amp; Overview</a></li><li><a href="leadership-team.html">Leadership Team</a></li></ul></li>
+<li class="has"><a href="audit-assurance.html">Services &amp; Solutions <i class="caret"></i></a><ul class="sub"><li><a href="audit-assurance.html">Audit &amp; Assurance</a></li><li><a href="accounting.html">Accounting</a></li><li><a href="taxation.html">Taxation</a></li><li><a href="capital-market.html">Capital Market</a></li><li><a href="business-advisory-support.html">Business Advisory Support</a></li></ul></li>
+<li class="has"><a href="our-clientele.html">Our Experience <i class="caret"></i></a><ul class="sub"><li><a href="our-clientele.html">Our Clientele</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></li>
+<li class="has"><a href="index.html#just-for-you">Just For You <i class="caret"></i></a>
+<ul class="sub"><li><a href="index.html#just-for-you">Banking &amp; Financial Services</a></li><li><a href="index.html#just-for-you">Manufacturing, Trading, Other Services</a></li><li><a href="just-for-you-startup-msme.html">Start-up / Early-stage / MSME</a></li><li><a href="index.html#just-for-you">Family Office / HNI / NRI</a></li><li><a href="index.html#just-for-you">Foreign Entity</a></li><li><a href="index.html#just-for-you">Not-for-profit</a></li></ul></li>
+<li class="has"><a href="#">Knowledge Centre <i class="caret"></i></a>
+<ul class="sub"><li><a href="#">E-Library</a></li><li><a href="#">Links to Regulators</a></li><li><a href="#">Latest News Updates</a></li><li><a href="#">Calculators</a></li><li><a href="#">Referencers</a></li><li><a href="#">Own Contributions</a></li></ul></li>
+<li><a href="index.html#contact">Contact Us</a></li>
+</ul>
+<a aria-label="LinkedIn" class="li" href="#">
+<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path></svg>
+</a>
+</nav>
 </header>
-
 <main>
-  <section class="page-head">
-    <div class="head-inner">
-      <span class="pill">About Us</span>
-      <p class="kicker">Partners and practice leadership</p>
-      <h1>Leadership Team</h1>
-      <p class="intro">Meet the partners of N. S. Gokhale & Co., bringing deep experience across audit, assurance, taxation, banking, finance, HR, GST, capital markets and advisory services.</p>
-    </div>
-  </section>
-
-  <section class="team-wrap">
-    <div class="team-intro">
-      <h2>Guided by experience, shaped by collaboration.</h2>
-      
-    </div>
-    <div class="team-grid" id="teamGrid"></div>
-    <p class="photo-note">Partner text has been populated from the existing N. S. Gokhale & Co. partners profile page. Partner photographs are sourced from the firm’s existing website; an internet connection is required for these portraits unless local copies are provided.</p>
-  </section>
+<section class="page-head">
+<div class="head-inner">
+<span class="pill">About Us</span>
+<p class="kicker">Partners and practice leadership</p>
+<h1>Leadership Team</h1>
+<p class="intro">Meet the partners of N. S. Gokhale &amp; Co., bringing deep experience across audit, assurance, taxation, banking, finance, HR, GST, capital markets and advisory services.</p>
+</div>
+</section>
+<section class="team-wrap">
+<div class="team-intro">
+<h2>Guided by experience, shaped by collaboration.</h2>
+</div>
+<div class="team-grid" id="teamGrid"></div>
+<p class="photo-note">Partner text has been populated from the existing N. S. Gokhale &amp; Co. partners profile page. Partner photographs are sourced from the firm’s existing website; an internet connection is required for these portraits unless local copies are provided.</p>
+</section>
 </main>
-
 <footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <h4>N S Gokhale &amp; Co.</h4>
-      <p>Chartered Accountants serving organisations, founders, families and individuals with assurance, tax and advisory support.</p>
-    </div>
-    <div><h4>Firm</h4><a href="about-us.html#history">History &amp; Overview</a><a href="leadership-team.html">Leadership Team</a></div>
-    <div><h4>Services</h4><a href="#">Audit &amp; Assurance</a><a href="#">Tax &amp; Compliance</a><a href="just-for-you.html">Just For You</a></div>
-    <div><h4>Contact</h4><a href="index.html#contact">Get in touch</a><a href="#">LinkedIn</a><a href="#">Knowledge Centre</a></div>
-  </div>
-  <div class="footer-bottom"><span>&copy; 2026 N S Gokhale &amp; Co.</span><span>Designed for clarity, continuity and trust.</span></div>
+<div class="footer-inner">
+<div>
+<h4>N S Gokhale &amp; Co.</h4>
+<p>Chartered Accountants serving organisations, founders, families and individuals with assurance, tax and advisory support.</p>
+</div>
+<div><h4>Firm</h4><a href="about-us.html#history">History &amp; Overview</a><a href="leadership-team.html">Leadership Team</a></div>
+<div><h4>Services</h4><a href="#">Audit &amp; Assurance</a><a href="#">Tax &amp; Compliance</a><a href="just-for-you.html">Just For You</a></div>
+<div><h4>Contact</h4><a href="index.html#contact">Get in touch</a><a href="#">LinkedIn</a><a href="#">Knowledge Centre</a></div>
+</div>
+<div class="footer-bottom"><span>© 2026 N S Gokhale &amp; Co.</span><span>Designed for clarity, continuity and trust.</span></div>
 </footer>
-
 <script>
 const IMAGE_BASE='';
 
@@ -260,5 +271,29 @@ document.querySelectorAll('.partner-close').forEach(btn=>btn.addEventListener('c
 document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('nav').classList.toggle('open'));
 window.addEventListener('scroll',()=>document.getElementById('topbar').classList.toggle('scrolled',scrollY>60),{passive:true});
 </script>
-</body>
+<script id="nsg-mobile-menu-interaction">
+/* Mobile submenu toggle: first tap expands, next tap follows the parent link if valid. */
+(function(){
+ const nav=document.getElementById('nav'),toggle=document.getElementById('menuToggle');
+ if(!nav||!toggle)return;
+ toggle.setAttribute('aria-expanded','false');
+ toggle.addEventListener('click',()=>{requestAnimationFrame(()=>toggle.setAttribute('aria-expanded',String(nav.classList.contains('open'))));});
+ nav.querySelectorAll('.menu > li').forEach(li=>{
+  const sub=li.querySelector(':scope > .sub'),a=li.querySelector(':scope > a');
+  if(!sub||!a)return;
+  a.setAttribute('aria-expanded','false');
+  a.addEventListener('click',e=>{
+   if(window.innerWidth>940)return;
+   const expanded=li.classList.contains('mobile-expanded');
+   if(!expanded || a.getAttribute('href')==='#' || !a.getAttribute('href')){
+    e.preventDefault();
+    nav.querySelectorAll('.menu > li.mobile-expanded').forEach(other=>{if(other!==li){other.classList.remove('mobile-expanded');const oa=other.querySelector(':scope > a');if(oa)oa.setAttribute('aria-expanded','false');}});
+    li.classList.toggle('mobile-expanded');a.setAttribute('aria-expanded',String(li.classList.contains('mobile-expanded')));
+   }
+  });
+ });
+ nav.querySelectorAll('.sub a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
+ window.addEventListener('resize',()=>{if(window.innerWidth>940){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}});
+})();
+</script></body>
 </html>

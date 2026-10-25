@@ -725,7 +725,22 @@ body{background:#faf9f6;color:#18335a} .xp-hero{position:relative;min-height:520
 @media(max-width:800px){.xp-detail-hero{grid-template-columns:1fr}.xp-detail-hero>div:first-child{padding:130px 7% 55px}.xp-detail-visual{min-height:300px}.xp-detail-hero h1{font-size:clamp(50px,10vw,80px)}}
 </style><style>.xp-article .xp-columns ul{margin:14px 0 0;padding-left:22px;color:#53647b;font-size:16px;line-height:1.85}.xp-article .xp-columns li{padding:5px 0}.xp-article .xp-columns p{margin:0 0 14px}.xp-article .xp-columns h3{line-height:1.24}.xp-article .xp-columns{align-items:start}.xp-article .xp-facts b{font-size:clamp(20px,2.2vw,28px)}@media(max-width:700px){.xp-article .xp-columns{grid-template-columns:1fr;gap:18px}}</style>
 <style id="case-editorial-image-override">.xp-detail-hero .xp-detail-visual{background-image:linear-gradient(90deg,rgba(12,35,65,.08),rgba(12,35,65,.02)),url("assets/case-migration-editorial.jpg")!important;background-position:center center!important;background-size:cover!important;}</style>
-</head><body><header class="topbar" id="topbar">
+<style id="nsg-mobile-menu-fix">
+/* Consistent accessible mobile navigation on every page */
+@media(max-width:940px){
+ .topbar .nav .menu{position:absolute!important;top:var(--nav-h,84px)!important;left:12px!important;right:12px!important;width:auto!important;max-height:calc(100dvh - var(--nav-h,84px) - 14px)!important;overflow-y:auto!important;background:#fff!important;border:1px solid #dce4e8!important;z-index:1000!important;flex-direction:column!important;align-items:stretch!important;padding:10px 0!important;box-shadow:0 18px 40px rgba(0,0,0,.18)!important}
+ .topbar .nav:not(.open) .menu{display:none!important}
+ .topbar .nav.open .menu{display:flex!important}
+ .topbar .nav .menu>li{width:100%!important;padding:0!important}
+ .topbar .nav .menu>li>a{color:#15315a!important;display:flex!important;align-items:center!important;justify-content:space-between!important;font-size:14px!important;font-weight:500!important;white-space:normal!important;padding:13px 20px!important;text-shadow:none!important}
+ .topbar .nav .menu>li>a .caret{color:#15315a!important;opacity:1!important}
+ .topbar .nav .menu>li>.sub{display:none!important;position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;background:#f4f7fa!important;border:0!important;box-shadow:none!important;min-width:0!important;padding:4px 0 8px!important}
+ .topbar .nav .menu>li.mobile-expanded>.sub{display:block!important}
+ .topbar .nav .sub li a{display:block!important;color:#15315a!important;font-size:13px!important;padding:11px 26px 11px 35px!important;white-space:normal!important}
+ .topbar .nav .sub li a:hover{background:#e5eef6!important}
+ .topbar .nav .menu-toggle{position:relative;z-index:1001;cursor:pointer}
+}
+</style></head><body><header class="topbar" id="topbar">
 <a aria-label="Home" href="index.html">
 <img alt="N S Gokhale &amp; Co — Chartered Accountants" class="logo" src="assets/NSG Master Logo for presentations.png"/>
 </a>
@@ -739,7 +754,7 @@ body{background:#faf9f6;color:#18335a} .xp-hero{position:relative;min-height:520
 <ul class="sub"><li><a href="audit-assurance.html">Audit &amp; Assurance</a></li><li><a href="accounting.html">Accounting</a></li><li><a href="taxation.html">Taxation</a></li><li><a href="capital-market.html">Capital Market</a></li><li><a href="business-advisory-support.html">Business Advisory Support</a></li></ul></li>
 <li class="has"><a href="#">Our Experience <i class="caret"></i></a><ul class="sub"><li><a href="our-clientele.html">Our Clientele</a></li><li><a href="case-studies.html">Case Studies</a></li></ul></li>
 <li class="has"><a href="index.html#just-for-you">Just For You <i class="caret"></i></a>
-<ul class="sub"><li><a href="just-for-you.html#bfsi">BFSI Entity — Bank, NBFC, MF, Insurance</a></li><li><a href="just-for-you.html#manufacturing">Manufacturing, Trading &amp; Other Services</a></li><li><a href="just-for-you.html#startup">Start-Up / Early Stage &amp; MSME</a></li><li><a href="just-for-you.html#individuals">Individuals</a></li></ul></li>
+<ul class="sub"><li><a href="index.html#just-for-you">Banking &amp; Financial Services</a></li><li><a href="index.html#just-for-you">Manufacturing, Trading, Other Services</a></li><li><a href="just-for-you-startup-msme.html">Start-up / Early-stage / MSME</a></li><li><a href="index.html#just-for-you">Family Office / HNI / NRI</a></li><li><a href="index.html#just-for-you">Foreign Entity</a></li><li><a href="index.html#just-for-you">Not-for-profit</a></li></ul></li>
 <li class="has"><a href="#">Knowledge Centre <i class="caret"></i></a>
 <ul class="sub"><li><a href="#">E-Library</a></li><li><a href="#">Links to Regulators</a></li><li><a href="#">Latest News Updates</a></li><li><a href="#">Calculators</a></li><li><a href="#">Referencers</a></li><li><a href="#">Own Contributions</a></li></ul></li>
 <li class="has"><a href="#">Life@Nsg <i class="caret"></i></a>
@@ -761,7 +776,7 @@ body{background:#faf9f6;color:#18335a} .xp-hero{position:relative;min-height:520
 <div class="xp-columns"><h3>01<br/>Documentation Review</h3><div><p>Evaluating the integrity of the migration process through examination of:</p><ul><li>Data Migration Contracts, Agreements, and Scope of Work</li><li>Non-Disclosure Agreements specific to the data migration</li><li>Project management practices</li><li>Infrastructure readiness</li><li>Mock test schedules, execution, and subsequent corrective actions</li><li>Production run schedules, execution logs, and corrections</li><li>Reporting mechanisms post-production run and business verification for Go-Live readiness</li></ul></div></div>
 <div class="xp-columns"><h3>02<br/>Data Migration Script Development</h3><div><p>Pre-validation of automated scripts for the production run through:</p><ul><li>Analysis of data cleansing and massaging rules</li><li>Pre- and post-migration schema comparisons for source and destination databases</li><li>Development and testing of comparison scripts to ensure migration success against benchmarks</li></ul></div></div>
 <div class="xp-columns"><h3>03<br/>Migration Cycle Audit</h3><div><p>Script generation and execution to verify:</p><ul><li>Data cleansing and massaging activities</li><li>Schema compatibility and data integrity post-migration</li><li>Execution of audit scripts against provided data sets to identify discrepancies or issues</li></ul></div></div>
-<div aria-label="Assignment outcome" class="xp-outcome"><strong>Assignment outcome</strong><p>The documented engagement covered the migration lifecycle, including documentation review, data migration script development and migration-cycle audit. The source compendium does not specify a quantified outcome or post-audit result.</p></div><p class="xp-note">Source: NSG — A Compendium of Few Case Studies, October 2026, Case Study #4 (pages 6–7). The source does not state a quantified result or post-audit outcome; none has been invented here. Confidential source material — internal review only; NSG approval required before public release.</p>
+<div aria-label="Assignment outcome" class="xp-outcome"><strong>Assignment outcome</strong><p>The documented engagement covered the migration lifecycle, including documentation review, data migration script development and migration-cycle audit. The source compendium does not specify a quantified outcome or post-audit result.</p></div>
 <div class="xp-smallnav"><a href="case-studies.html">← All case studies</a><a href="our-clientele.html">Explore our clientele →</a></div></article><footer class="footer">
 <div class="footer-inner">
 <div class="footer-brand-col">
@@ -793,11 +808,34 @@ body{background:#faf9f6;color:#18335a} .xp-hero{position:relative;min-height:520
 <span>© 2026 N S Gokhale &amp; Co</span>
 <span>Chartered Accountants · Since 1959</span>
 </div>
-</footer><script>document.addEventListener('DOMContentLoaded',function(){const btn=document.getElementById('menuToggle'),nav=document.getElementById('nav');if(btn&&nav){btn.addEventListener('click',function(){nav.classList.toggle('open');document.body.classList.toggle('menu-open')})}document.querySelectorAll('.topbar .has > a').forEach(a=>a.addEventListener('click',function(e){if(window.innerWidth<=900){e.preventDefault();a.parentElement.classList.toggle('open')}}))});</script>
-<script>document.addEventListener('DOMContentLoaded',()=>{const b=document.getElementById('menuToggle'),n=document.getElementById('nav');if(b&&n)b.addEventListener('click',()=>n.classList.toggle('open'));document.querySelectorAll('.nav .has > a').forEach(a=>a.addEventListener('click',e=>{if(window.innerWidth<=900){e.preventDefault();a.parentElement.classList.toggle('open')}}));});</script>
+</footer><script>document.addEventListener('DOMContentLoaded',function(){const btn=document.getElementById('menuToggle'),nav=document.getElementById('nav');if(btn&&nav){btn.addEventListener('click',function(){nav.classList.toggle('open');document.body.classList.toggle('menu-open')})}});</script>
 <script>
 (function(){var header=document.getElementById('topbar');if(!header)return;
 function syncHeader(){header.classList.toggle('scrolled',window.scrollY>35)}
 window.addEventListener('scroll',syncHeader,{passive:true});window.addEventListener('load',syncHeader);syncHeader();
+})();
+</script><script id="nsg-mobile-menu-interaction">
+/* Mobile submenu toggle: first tap expands, next tap follows the parent link if valid. */
+(function(){
+ const nav=document.getElementById('nav'),toggle=document.getElementById('menuToggle');
+ if(!nav||!toggle)return;
+ toggle.setAttribute('aria-expanded','false');
+ toggle.addEventListener('click',()=>{requestAnimationFrame(()=>toggle.setAttribute('aria-expanded',String(nav.classList.contains('open'))));});
+ nav.querySelectorAll('.menu > li').forEach(li=>{
+  const sub=li.querySelector(':scope > .sub'),a=li.querySelector(':scope > a');
+  if(!sub||!a)return;
+  a.setAttribute('aria-expanded','false');
+  a.addEventListener('click',e=>{
+   if(window.innerWidth>940)return;
+   const expanded=li.classList.contains('mobile-expanded');
+   if(!expanded || a.getAttribute('href')==='#' || !a.getAttribute('href')){
+    e.preventDefault();
+    nav.querySelectorAll('.menu > li.mobile-expanded').forEach(other=>{if(other!==li){other.classList.remove('mobile-expanded');const oa=other.querySelector(':scope > a');if(oa)oa.setAttribute('aria-expanded','false');}});
+    li.classList.toggle('mobile-expanded');a.setAttribute('aria-expanded',String(li.classList.contains('mobile-expanded')));
+   }
+  });
+ });
+ nav.querySelectorAll('.sub a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
+ window.addEventListener('resize',()=>{if(window.innerWidth>940){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}});
 })();
 </script></body></html>
